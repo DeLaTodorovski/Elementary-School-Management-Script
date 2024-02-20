@@ -11,14 +11,23 @@ $.ajax({
    type : 'GET', // type of the HTTP request
    success : function(data){
       var obj = jQuery.parseJSON(data);
-      console.log(obj);
+      //console.log(obj);
+      for(let i=0; i<obj.length; i++){
+      console.log(obj[i])
+      $(".test").html(obj[i]);
+    }
    }
-});
+});  
+
+// $(document).ready(function() {
+//     UpdateLTLRating();
+// });
   </script>  
   
 </head>
 <body>
-
+ 
+<div name="test"></div>
 
 
 </body>
