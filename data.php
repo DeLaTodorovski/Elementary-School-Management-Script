@@ -20,6 +20,7 @@ $data = array();
 while($row = $teachers->fetch_assoc()){
     $a = array($row["id"], $row["v_ime"], $row["v_prezime"]);
     array_push($data, $a);
+
 }
 
 echo json_encode($data);

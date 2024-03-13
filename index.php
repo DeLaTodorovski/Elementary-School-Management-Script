@@ -18,10 +18,14 @@ $teachers = $conn->query("SELECT * FROM `vraboteni`");
 
 if ($teachers->num_rows > 0) {
   // output data of each row
+  echo "<table>
+  <tr>
+  <th>Id:</th><th>Име</th><th>Презиме</th>
+  </tr>";
   while($row = $teachers->fetch_assoc()) {
-    //echo "id: " . $row["id"]. " - Name: " . $row["v_ime"]. " " . $row["v_prezime"]. "<br>";
-   //echo $row;
+    echo "<tr><td>" .$row["id"]. "</td><td>" .$row["v_ime"]. "</td><td>".$row["v_prezime"]."</td></tr>";
   }
+  echo "</table>";
 } else {
   echo "0 results";
 }
@@ -29,7 +33,7 @@ $conn->close();
 
 ?>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
   //alert($row)
 
  const nArray = $teachers;
@@ -37,4 +41,4 @@ $conn->close();
   alert($row[i])
  }
 
-</script>
+</script> -->

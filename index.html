@@ -6,6 +6,25 @@
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script type="text/javascript">
 
+// if(condition){
+//     $("#LTL").change(UpdateLTLRating);
+// }
+// function UpdateLTLRating() {
+//     console.log("update shipping called");
+//     $.ajax({
+//         url: window.location.href,
+//         data: 'call=ajax&method=ltlRateList&'
+//         type: 'POST',
+//         success: function (resp) {
+//         console.log(resp)
+//         $(".rate-ul").html(resp);
+//         },
+//          error: function (xhr, status) {
+//             alert("Sorry, there was a problem!");
+//         }
+//     });
+// }
+
 $.ajax({
    url : 'data.php', // your php file
    type : 'GET', // type of the HTTP request
@@ -13,9 +32,11 @@ $.ajax({
       var obj = jQuery.parseJSON(data);
       //console.log(obj);
       for(let i=0; i<obj.length; i++){
-      console.log(obj[i])
-      $(".test").html(obj[i]);
+      //console.log(obj[i])
+
     }
+    console.log(obj)
+    $(".test").html(obj);
    }
 });  
 
@@ -27,7 +48,7 @@ $.ajax({
 </head>
 <body>
  
-<div name="test"></div>
+<div class="test"></div>
 
 
 </body>
